@@ -62,9 +62,15 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --background: oklch(0.16 0.012 60);
+  --foreground: oklch(0.95 0.015 75);
+  --gold: oklch(0.78 0.13 80);
+  --gold-foreground: oklch(0.16 0.012 60);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
