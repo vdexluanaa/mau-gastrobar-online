@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Instagram, Award } from "lucide-react";
+import { MenuCarousel } from "@/components/MenuCarousel";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -132,6 +133,20 @@ function Index() {
             no mapa da gastronomia brasileira.
           </p>
         </div>
+      </section>
+
+      {/* Carrossel cardápio */}
+      <section className="py-20">
+        <div className="mx-auto mb-10 max-w-3xl px-6 text-center">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold/80">Do cardápio</p>
+          <h3
+            className="text-3xl text-foreground md:text-4xl"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+          >
+            Pratos e drinks que contam a casa.
+          </h3>
+        </div>
+        <MenuCarousel />
       </section>
 
       {/* Info */}
