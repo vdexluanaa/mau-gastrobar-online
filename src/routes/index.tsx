@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Instagram, Award } from "lucide-react";
+import { MenuCarousel } from "@/components/MenuCarousel";
 
 export const Route = createFileRoute("/")({
   component: Index,
