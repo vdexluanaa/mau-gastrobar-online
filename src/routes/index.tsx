@@ -3,6 +3,7 @@ import { MapPin, Phone, Clock, Instagram, Award } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
 import croquetaImg from "@/assets/dish-croqueta.jpg";
 import facadeImg from "@/assets/maua-facade-night.jpg";
+import logoImg from "@/assets/maua-logo.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -31,16 +32,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-function Logo({ size = "text-2xl", subtitle = "GASTROBAR" }: { size?: string; subtitle?: string }) {
+function Logo({ className = "h-20", subtitle }: { className?: string; subtitle?: string }) {
   return (
-    <div className="text-center leading-tight">
-      <div
-        className={`${size} tracking-[0.3em] text-gold`}
-        style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
-      >
-        MAUÁ
-      </div>
-      <div className="mt-1 text-[10px] tracking-[0.35em] text-gold/80">{subtitle}</div>
+    <div className="flex flex-col items-center leading-tight">
+      <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
+      {subtitle && (
+        <div className="mt-2 text-[10px] tracking-[0.35em] text-gold/90">{subtitle}</div>
+      )}
     </div>
   );
 }
@@ -215,7 +213,7 @@ function Index() {
       {/* Footer — verde com logo centralizada */}
       <footer className="bg-green-deep border-t border-gold/20 py-10">
         <div className="flex justify-center">
-          <Logo size="text-2xl" subtitle="GASTROBAR · GOIÂNIA" />
+          <Logo className="h-16" subtitle="GASTROBAR · GOIÂNIA" />
         </div>
       </footer>
     </main>
