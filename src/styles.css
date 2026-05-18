@@ -67,8 +67,8 @@
   --foreground: oklch(0.95 0.015 75);
   --gold: oklch(0.78 0.13 80);
   --gold-foreground: oklch(0.16 0.012 60);
-  --green: oklch(0.32 0.04 145);
-  --green-deep: oklch(0.24 0.035 145);
+  --green: oklch(0.48 0.035 130);
+  --green-deep: oklch(0.43 0.035 130);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-green: var(--green);
