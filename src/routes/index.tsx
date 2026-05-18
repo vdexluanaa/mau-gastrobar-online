@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-function Logo({ className = "h-32 md:h-36", subtitle }: { className?: string; subtitle?: string }) {
+function Logo({ className = "h-20", subtitle }: { className?: string; subtitle?: string }) {
   return (
     <div className="flex flex-col items-center leading-tight">
       <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
@@ -213,7 +213,7 @@ function Index() {
       {/* Footer — verde com logo centralizada */}
       <footer className="bg-green-deep border-t border-gold/20 py-10">
         <div className="flex justify-center">
-          <Logo className="h-24" subtitle="GASTROBAR · GOIÂNIA" />
+          <Logo className="h-16" subtitle="GASTROBAR · GOIÂNIA" />
         </div>
       </footer>
     </main>
