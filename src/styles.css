@@ -67,8 +67,12 @@
   --foreground: oklch(0.95 0.015 75);
   --gold: oklch(0.78 0.13 80);
   --gold-foreground: oklch(0.16 0.012 60);
+  --green: oklch(0.32 0.04 145);
+  --green-deep: oklch(0.24 0.035 145);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+  --color-green: var(--green);
+  --color-green-deep: var(--green-deep);
   --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --card: oklch(1 0 0);
