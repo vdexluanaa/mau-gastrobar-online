@@ -213,7 +213,7 @@ function Index() {
       {/* Footer — verde com logo centralizada */}
       <footer className="bg-green-deep border-t border-gold/20 py-10">
         <div className="flex justify-center">
-          <Logo className="h-16" subtitle="GASTROBAR · GOIÂNIA" />
+          <Logo className="h-24" subtitle="GASTROBAR · GOIÂNIA" />
         </div>
       </footer>
     </main>
