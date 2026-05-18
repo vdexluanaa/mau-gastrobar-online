@@ -32,16 +32,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-function Logo({ size = "text-2xl", subtitle = "GASTROBAR" }: { size?: string; subtitle?: string }) {
+function Logo({ className = "h-20", subtitle }: { className?: string; subtitle?: string }) {
   return (
-    <div className="text-center leading-tight">
-      <div
-        className={`${size} tracking-[0.3em] text-gold`}
-        style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
-      >
-        MAUÁ
-      </div>
-      <div className="mt-1 text-[10px] tracking-[0.35em] text-gold/80">{subtitle}</div>
+    <div className="flex flex-col items-center leading-tight">
+      <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
+      {subtitle && (
+        <div className="mt-2 text-[10px] tracking-[0.35em] text-gold/90">{subtitle}</div>
+      )}
     </div>
   );
 }
