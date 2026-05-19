@@ -72,13 +72,13 @@ function Index() {
               href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-gold-foreground shadow-lg shadow-gold/25 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:shadow-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/30 bg-white/10 px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-foreground shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-green hover:bg-green hover:text-foreground hover:shadow-xl hover:shadow-green/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
             >
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
               />
-              <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
+              <MapPin className="h-4 w-4 text-gold transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110 group-hover:text-foreground" />
               <span className="relative">Traçar minha rota até o Mauá</span>
               <span aria-hidden className="relative text-base leading-none transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
