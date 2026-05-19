@@ -179,6 +179,26 @@ function Index() {
         <MenuCarousel />
       </section>
 
+      {/* Avaliações */}
+      <section className="relative border-y border-green/20 bg-gradient-to-b from-green-deep/30 via-background to-background py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-green to-transparent"
+        />
+        <div className="mx-auto mb-10 max-w-3xl px-6 text-center">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-green">Quem viveu, contou</p>
+          <h3
+            className="text-3xl text-foreground md:text-4xl"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+          >
+            O que dizem sobre a casa.
+          </h3>
+          <div className="mx-auto mt-6 h-px w-16 bg-green/60" />
+        </div>
+        <ReviewsCarousel />
+      </section>
+
+
       {/* Info / contatos */}
       <section className="mx-auto max-w-4xl px-6 py-20">
         <div className="grid gap-10 md:grid-cols-3">
