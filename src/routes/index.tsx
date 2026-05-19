@@ -66,6 +66,17 @@ function Index() {
           <p className="mt-3 text-sm text-muted-foreground">Goiânia, GO</p>
         </div>
         <div className="mx-auto max-w-4xl px-6 pb-12">
+          <div className="mb-6 text-center">
+            <a
+              href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm bg-gold px-7 py-3 text-xs font-medium uppercase tracking-[0.25em] text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-gold/30"
+            >
+              <MapPin className="h-4 w-4" />
+              Ver rota no Google Maps
+            </a>
+          </div>
           <div className="overflow-hidden rounded-sm border border-border/60 shadow-2xl">
             <iframe
               title="Localização do Mauá Gastrobar"
@@ -77,17 +88,6 @@ function Index() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-          </div>
-          <div className="mt-4 text-center">
-            <a
-              href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold transition-opacity hover:opacity-70"
-            >
-              <MapPin className="h-3.5 w-3.5" />
-              Abrir rota no Google Maps
-            </a>
           </div>
         </div>
       </section>
