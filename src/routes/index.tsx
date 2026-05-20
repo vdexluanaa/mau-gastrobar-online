@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Instagram, Award } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
-import croquetaImg from "@/assets/dish-croqueta.jpg";
+import croquetaImg from "@/assets/dish-braba-brocolis.jpg";
 import facadeImg from "@/assets/maua-facade-night.jpg";
 import logoImg from "@/assets/maua-logo.png";
 
