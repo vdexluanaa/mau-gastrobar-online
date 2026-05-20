@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Clock, Instagram, Award } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Phone, Clock, Instagram, Award, ArrowRight, ArrowLeft } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
+import { DrinksCarousel } from "@/components/DrinksCarousel";
+import { HappyHourBanner } from "@/components/HappyHourBanner";
 import croquetaImg from "@/assets/dish-braba-brocolis.jpg";
+import jilozinhoImg from "@/assets/dish-jilozinho-maua.jpg";
 import facadeImg from "@/assets/maua-facade-night.jpg";
 import logoImg from "@/assets/maua-logo.png";
 
@@ -43,10 +47,76 @@ function Logo({ className = "h-24", subtitle }: { className?: string; subtitle?:
   );
 }
 
+function ChampionDishToggle() {
+  // Two champion dishes: Braba (2026) and Jilozinho (2025). Default shows Braba; arrow swaps.
+  const dishes = [
+    {
+      img: croquetaImg,
+      label: "Comida di Buteco 2026",
+      title: '"A Braba no Brócolis"',
+      desc: "Croquetas artesanais de cupim desfiado com alho-poró, recheadas com muçarela e acompanhadas de maionese de brócolis cru com limão. Uma criação que coloca a casa no mapa da gastronomia brasileira.",
+    },
+    {
+      img: jilozinhoImg,
+      label: "Comida di Buteco 2025",
+      title: '"Jilozinho do Mauá"',
+      desc: "O prato com o qual representamos o Mauá no concurso de 2025. Chips fritos crocantes, creme de queijo suave e cupim desfiado bem temperado — equilíbrio perfeito entre o crocante, o cremoso e o suculento.",
+    },
+  ];
+  const [i, setI] = useState(0);
+  const dish = dishes[i];
+  const next = () => setI((v) => (v + 1) % dishes.length);
+  const prev = () => setI((v) => (v - 1 + dishes.length) % dishes.length);
+
+  return (
+    <div className="grid items-center gap-10 md:grid-cols-2">
+      <div className="relative overflow-hidden rounded-sm border border-gold/20 shadow-2xl">
+        <img
+          key={dish.img}
+          src={dish.img}
+          alt={dish.title}
+          className="h-full w-full object-cover aspect-[4/3] animate-in fade-in duration-500"
+        />
+      </div>
+      <div className="text-center md:text-left">
+        <Award className="mx-auto md:mx-0 h-8 w-8 text-gold" strokeWidth={1.2} />
+        <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">{dish.label}</p>
+        <h3
+          className="mt-3 text-3xl text-foreground md:text-4xl"
+          style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+        >
+          {dish.title}
+        </h3>
+        <p className="mt-4 text-sm leading-relaxed text-foreground/85 md:text-base">{dish.desc}</p>
+
+        <div className="mt-8 flex items-center justify-center gap-4 md:justify-start">
+          <button
+            type="button"
+            onClick={prev}
+            aria-label="Prato anterior"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-gold transition-all hover:-translate-x-0.5 hover:bg-gold hover:text-gold-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            className="group inline-flex items-center gap-2 rounded-full bg-gold/10 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold transition-all hover:bg-gold hover:text-gold-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            aria-label="Ver outro prato campeão"
+          >
+            <span>Ver o prato de {i === 0 ? "2025" : "2026"}</span>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
-      {/* Header — banner verde com logo centralizada */}
+      {/* Header */}
       <header className="bg-green-deep border-b border-gold/20">
         <div className="mx-auto max-w-6xl px-6 py-6 flex justify-center">
           <Logo />
@@ -97,7 +167,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Sobre — com foto da fachada ao fundo */}
+      {/* Sobre */}
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -134,33 +204,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Croqueta premiada — fundo verde + foto ao lado */}
+      {/* Pratos campeões — Braba + Jilozinho */}
       <section className="bg-green-deep border-y border-gold/20">
         <div className="mx-auto max-w-5xl px-6 py-16">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            <div className="overflow-hidden rounded-sm border border-gold/20 shadow-2xl">
-              <img
-                src={croquetaImg}
-                alt="A Braba no Brócolis — croqueta premiada do Mauá Gastrobar"
-                className="h-full w-full object-cover aspect-[4/3]"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <Award className="mx-auto md:mx-0 h-8 w-8 text-gold" strokeWidth={1.2} />
-              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">Comida di Buteco 2026</p>
-              <h3
-                className="mt-3 text-3xl text-foreground md:text-4xl"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
-              >
-                "A Braba no Brócolis"
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/85 md:text-base">
-                Croquetas artesanais de cupim desfiado com alho-poró, recheadas com muçarela e
-                acompanhadas de maionese de brócolis cru com limão. Uma criação que coloca a casa
-                no mapa da gastronomia brasileira.
-              </p>
-            </div>
-          </div>
+          <ChampionDishToggle />
         </div>
       </section>
 
@@ -174,8 +221,19 @@ function Index() {
           >
             Pratos e drinks que contam a casa.
           </h3>
+          <p className="mt-3 text-sm italic text-muted-foreground">
+            Uma amostra dos pratos campeões e dos queridinhos do salão — o cardápio completo tem muito mais.
+          </p>
         </div>
         <MenuCarousel />
+      </section>
+
+      {/* Happy Hour + Rodízio banner */}
+      <HappyHourBanner />
+
+      {/* Drinks famosos */}
+      <section className="py-20">
+        <DrinksCarousel />
       </section>
 
       {/* Info / contatos */}
@@ -215,7 +273,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Footer — verde com logo centralizada */}
+      {/* Footer */}
       <footer className="bg-green-deep border-t border-gold/20 py-10">
         <div className="flex justify-center">
           <Logo className="h-20" subtitle="GASTROBAR · GOIÂNIA" />
