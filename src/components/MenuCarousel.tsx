@@ -1,61 +1,104 @@
-import croqueta from "@/assets/dish-croqueta.jpg";
-import cupim from "@/assets/dish-cupim.jpg";
-import ceviche from "@/assets/dish-ceviche.jpg";
-import jilo from "@/assets/dish-jilo.jpg";
-import gin from "@/assets/drink-gin.jpg";
-import tropical from "@/assets/drink-tropical.jpg";
+import { ExternalLink } from "lucide-react";
+import picanha from "@/assets/dish-picanha-steak.jpg";
+import jilozinho from "@/assets/dish-jilozinho-maua.jpg";
+import mixCupim from "@/assets/dish-mix-cupim.jpg";
+import chipsJilo from "@/assets/dish-chips-jilo.jpg";
+import carneSerenada from "@/assets/dish-carne-serenada.jpg";
+import croqueta from "@/assets/dish-braba-brocolis.jpg";
+
+const MENU_URL = "https://www.vucafood.com.br";
 
 const items = [
-  { img: croqueta, name: "A Braba no Brócolis", desc: "Croquetas de cupim · maionese de brócolis", price: "R$ 40" },
-  { img: cupim, name: "Disco de Cupim", desc: "Cupim desfiado, muçarela e molho verde", price: "R$ 19,90" },
-  { img: ceviche, name: "Ceviche Tropical", desc: "Tilápia, manga e pimentões", price: "R$ 39,99" },
-  { img: jilo, name: "Chips de Jiló", desc: "Jiló crocante com molho verde", price: "R$ 24,99" },
-  { img: gin, name: "Gin Autoral", desc: "Defumado, cítrico e herbal", price: "Drinks" },
-  { img: tropical, name: "Tropical da Casa", desc: "Frutas vermelhas e alecrim", price: "Drinks" },
+  {
+    img: croqueta,
+    name: "A Braba no Brócolis",
+    desc: "Croquetas de cupim · maionese de brócolis",
+    price: "R$ 40,00",
+  },
+  {
+    img: picanha,
+    name: "Picanha Steak",
+    desc: "600g de picanha grelhada · 500g de mandioca na manteiga de garrafa · toque de pimentas",
+    price: "R$ 79,99",
+  },
+  {
+    img: carneSerenada,
+    name: "Carne Serenada Angus",
+    desc: "500g de coxão duro Angus na manteiga do sertão · mandioca, pimentão e cereja · muçarela derretida",
+    price: "R$ 94,99",
+  },
+  {
+    img: mixCupim,
+    name: "Mix de Cupim",
+    desc: "700g de cupim selado na manteiga · 400g de anéis de cebola · 400g de batatinhas fritas",
+    price: "R$ 108,00",
+  },
+  {
+    img: jilozinho,
+    name: "Jilozinho do Mauá",
+    desc: "Chips crocantes, creme de queijo e cupim desfiado · prato do concurso 2025",
+    price: "R$ 50,00",
+  },
+  {
+    img: chipsJilo,
+    name: "Chips de Jiló",
+    desc: "Jiló crocante com molho verde da casa",
+    price: "R$ 24,99",
+  },
 ];
 
 export function MenuCarousel() {
-  // Duplicate for seamless infinite loop
   const loop = [...items, ...items];
 
   return (
-    <div
-      className="group relative overflow-hidden"
-      style={{
-        maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-      }}
-    >
-      <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
-        {loop.map((item, i) => (
-          <figure
-            key={i}
-            className="w-[280px] shrink-0 md:w-[340px]"
-          >
-            <div className="overflow-hidden rounded-sm border border-border/60">
-              <img
-                src={item.img}
-                alt={item.name}
-                width={1024}
-                height={1024}
-                loading="lazy"
-                className="aspect-square h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <figcaption className="mt-4 px-1">
-              <div className="flex items-baseline justify-between gap-3">
-                <p
-                  className="text-lg text-foreground"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
-                >
-                  {item.name}
-                </p>
-                <span className="text-xs uppercase tracking-[0.2em] text-gold/80">{item.price}</span>
+    <div className="space-y-10">
+      <div
+        className="group relative overflow-hidden"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        }}
+      >
+        <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
+          {loop.map((item, i) => (
+            <figure key={i} className="w-[280px] shrink-0 md:w-[340px]">
+              <div className="overflow-hidden rounded-sm border border-border/60">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                  className="aspect-square h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
-            </figcaption>
-          </figure>
-        ))}
+              <figcaption className="mt-4 px-1">
+                <div className="flex items-baseline justify-between gap-3">
+                  <p
+                    className="text-lg text-foreground"
+                    style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+                  >
+                    {item.name}
+                  </p>
+                  <span className="text-xs uppercase tracking-[0.2em] text-gold/80">{item.price}</span>
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex justify-center">
+        <a
+          href={MENU_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-7 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-gold-foreground hover:shadow-lg hover:shadow-gold/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]"
+        >
+          <span>Ver cardápio completo</span>
+          <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+        </a>
       </div>
     </div>
   );
