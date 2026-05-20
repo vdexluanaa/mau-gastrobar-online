@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Instagram, Award } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
-import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import croquetaImg from "@/assets/dish-croqueta.jpg";
 import facadeImg from "@/assets/maua-facade-night.jpg";
 import logoImg from "@/assets/maua-logo.png";
@@ -72,13 +71,13 @@ function Index() {
               href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/30 bg-white/10 px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-foreground shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-green hover:bg-green hover:text-foreground hover:shadow-xl hover:shadow-green/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-gold-foreground shadow-lg shadow-gold/25 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:shadow-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
             >
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
               />
-              <MapPin className="h-4 w-4 text-gold transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110 group-hover:text-foreground" />
+              <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
               <span className="relative">Traçar minha rota até o Mauá</span>
               <span aria-hidden className="relative text-base leading-none transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
@@ -178,26 +177,6 @@ function Index() {
         </div>
         <MenuCarousel />
       </section>
-
-      {/* Avaliações */}
-      <section className="relative border-y border-green/20 bg-gradient-to-b from-green-deep/30 via-background to-background py-20">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-green to-transparent"
-        />
-        <div className="mx-auto mb-10 max-w-3xl px-6 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-green">Quem viveu, contou</p>
-          <h3
-            className="text-3xl text-foreground md:text-4xl"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
-          >
-            O que dizem sobre a casa.
-          </h3>
-          <div className="mx-auto mt-6 h-px w-16 bg-green/60" />
-        </div>
-        <ReviewsCarousel />
-      </section>
-
 
       {/* Info / contatos */}
       <section className="mx-auto max-w-4xl px-6 py-20">
