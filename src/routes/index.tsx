@@ -256,8 +256,9 @@ function Index() {
       </RevealSection>
 
       {/* Info / contatos */}
-      <RevealSection className="mx-auto max-w-4xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-3">
+      <RevealSection className="border-t border-white/5 bg-white/[0.02] py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="grid gap-10 md:grid-cols-3">
           <div className="text-center">
             <Clock className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
             <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Horário</p>
