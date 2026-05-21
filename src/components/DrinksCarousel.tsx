@@ -40,44 +40,44 @@ export function DrinksCarousel() {
   const next = () => setIndex((i) => (i + 1) % drinks.length);
 
   return (
-    <div className="mx-auto max-w-5xl px-6">
-      <div className="mb-8 text-center">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold/80">Coquetelaria autoral</p>
+    <div className="mx-auto max-w-3xl px-6">
+      <div className="mb-6 text-center">
+        <p className="mb-2 text-xs uppercase tracking-[0.3em] text-gold/80">Coquetelaria autoral</p>
         <h3
-          className="text-3xl text-foreground md:text-4xl"
+          className="text-2xl text-foreground md:text-3xl"
           style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
         >
           Os drinks mais pedidos da casa.
         </h3>
-        <p className="mt-3 text-sm italic text-muted-foreground">
+        <p className="mt-2 text-sm italic text-muted-foreground">
           Uma seleção dos favoritos — a carta completa tem muito mais para explorar.
         </p>
       </div>
 
-      <div className="relative grid items-center gap-8 rounded-sm border border-gold/15 bg-background/40 p-6 shadow-2xl md:grid-cols-2 md:p-10">
+      <div className="relative grid items-center gap-6 rounded-sm border border-gold/15 bg-background/40 p-5 shadow-2xl md:grid-cols-[40%_1fr] md:gap-8 md:p-6">
         <div className="overflow-hidden rounded-sm border border-gold/20">
           <img
             key={drink.img}
             src={drink.img}
             alt={drink.name}
-            className="aspect-[4/5] h-full w-full object-cover animate-in fade-in duration-500"
+            className="aspect-[3/4] h-full w-full object-cover animate-in fade-in duration-500"
           />
         </div>
         <div className="text-center md:text-left">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold/80">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-gold/80">
             {String(index + 1).padStart(2, "0")} / {String(drinks.length).padStart(2, "0")}
           </span>
           <h4
-            className="mt-3 text-3xl text-foreground md:text-4xl"
+            className="mt-2 text-2xl text-foreground md:text-3xl"
             style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
           >
             {drink.name}
           </h4>
-          <div className="mx-auto mt-4 h-px w-12 bg-gold/50 md:mx-0" />
-          <p className="mt-5 text-sm leading-relaxed text-foreground/85 md:text-base">{drink.desc}</p>
-          <p className="mt-5 text-xs uppercase tracking-[0.25em] text-gold">{drink.price}</p>
+          <div className="mx-auto mt-3 h-px w-12 bg-gold/50 md:mx-0" />
+          <p className="mt-3 text-sm leading-relaxed text-foreground/85">{drink.desc}</p>
+          <p className="mt-3 text-xs uppercase tracking-[0.25em] text-gold">{drink.price}</p>
 
-          <div className="mt-8 flex items-center justify-center gap-3 md:justify-start">
+          <div className="mt-5 flex items-center justify-center gap-3 md:justify-start">
             <button
               type="button"
               onClick={prev}
