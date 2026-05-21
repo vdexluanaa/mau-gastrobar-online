@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MapPin, Phone, Clock, Instagram, Award, ArrowRight, ArrowLeft } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Award, ArrowRight } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
 import { DrinksCarousel } from "@/components/DrinksCarousel";
 import { HappyHourBanner } from "@/components/HappyHourBanner";
@@ -41,14 +41,13 @@ function Logo({ className = "h-24", subtitle }: { className?: string; subtitle?:
     <div className="flex flex-col items-center leading-tight">
       <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
       {subtitle && (
-        <div className="mt-2 text-[10px] tracking-[0.4em] text-gold">{subtitle}</div>
+        <div className="mt-2 text-[10px] tracking-[0.4em] text-white/80">{subtitle}</div>
       )}
     </div>
   );
 }
 
 function ChampionDishToggle() {
-  // Two champion dishes: Braba (2026) and Jilozinho (2025). Default shows Braba; arrow swaps.
   const dishes = [
     {
       img: croquetaImg,
@@ -66,11 +65,10 @@ function ChampionDishToggle() {
   const [i, setI] = useState(0);
   const dish = dishes[i];
   const next = () => setI((v) => (v + 1) % dishes.length);
-  const prev = () => setI((v) => (v - 1 + dishes.length) % dishes.length);
 
   return (
     <div className="grid items-center gap-10 md:grid-cols-2">
-      <div className="relative overflow-hidden rounded-sm border border-gold/20 shadow-2xl">
+      <div className="relative overflow-hidden rounded-sm border border-white/10 shadow-2xl">
         <img
           key={dish.img}
           src={dish.img}
@@ -79,26 +77,26 @@ function ChampionDishToggle() {
         />
       </div>
       <div className="text-center md:text-left">
-        <Award className="mx-auto md:mx-0 h-8 w-8 text-gold" strokeWidth={1.2} />
-        <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">{dish.label}</p>
+        <Award className="mx-auto md:mx-0 h-8 w-8 text-white" strokeWidth={1.2} />
+        <p className="mt-4 text-xs uppercase tracking-[0.3em] text-white/80">{dish.label}</p>
         <h3
-          className="mt-3 text-3xl text-foreground md:text-4xl"
+          className="mt-3 text-3xl text-white md:text-4xl"
           style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
         >
           {dish.title}
         </h3>
-        <p className="mt-4 text-sm leading-relaxed text-foreground/85 md:text-base">{dish.desc}</p>
+        <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-base">{dish.desc}</p>
 
         <div className="mt-8 flex items-center justify-center gap-4 md:justify-start">
           <button
             type="button"
             onClick={next}
             aria-label={`Ver ${dishes[(i + 1) % dishes.length].title}`}
-            className="group flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-gold transition-all hover:translate-x-0.5 hover:bg-gold hover:text-gold-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 text-white transition-all hover:translate-x-0.5 hover:bg-white hover:text-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <ArrowRight className="h-5 w-5" />
           </button>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white">
             Ver {dishes[(i + 1) % dishes.length].title}
           </span>
         </div>
@@ -111,7 +109,7 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
       {/* Header */}
-      <header className="bg-green-deep border-b border-gold/20">
+      <header className="bg-sage border-b border-white/10">
         <div className="mx-auto max-w-6xl px-6 py-6 flex justify-center">
           <Logo />
         </div>
@@ -120,7 +118,7 @@ function Index() {
       {/* Map */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-6xl px-6 pt-12 pb-6 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold/80">Onde nos encontrar</p>
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-sage/80">Onde nos encontrar</p>
           <h1
             className="text-3xl text-foreground md:text-4xl"
             style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.02em" }}
@@ -135,7 +133,7 @@ function Index() {
               href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-green-deep px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-green-foreground shadow-lg shadow-green-deep/30 ring-1 ring-gold/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green hover:shadow-xl hover:shadow-green-deep/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-sage px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-sage/30 ring-1 ring-white/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage/90 hover:shadow-xl hover:shadow-sage/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
             >
               <span
                 aria-hidden
@@ -199,7 +197,7 @@ function Index() {
       </section>
 
       {/* Pratos campeões — Braba + Jilozinho */}
-      <section className="bg-green-deep border-y border-gold/20">
+      <section className="bg-sage border-y border-white/10">
         <div className="mx-auto max-w-5xl px-6 py-16">
           <ChampionDishToggle />
         </div>
@@ -208,7 +206,7 @@ function Index() {
       {/* Carrossel cardápio */}
       <section className="py-20">
         <div className="mx-auto mb-10 max-w-3xl px-6 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold/80">Do cardápio</p>
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-sage/80">Do cardápio</p>
           <h3
             className="text-3xl text-foreground md:text-4xl"
             style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
@@ -234,8 +232,8 @@ function Index() {
       <section className="mx-auto max-w-4xl px-6 py-20">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="text-center">
-            <Clock className="mx-auto h-5 w-5 text-gold" strokeWidth={1.2} />
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-gold/80">Horário</p>
+            <Clock className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Horário</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Terça a Quinta: 18h–23h
               <br />
@@ -243,8 +241,8 @@ function Index() {
             </p>
           </div>
           <div className="text-center">
-            <Phone className="mx-auto h-5 w-5 text-gold" strokeWidth={1.2} />
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-gold/80">Reservas</p>
+            <Phone className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Reservas</p>
             <a
               href="tel:+556231000024"
               className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -253,8 +251,8 @@ function Index() {
             </a>
           </div>
           <div className="text-center">
-            <Instagram className="mx-auto h-5 w-5 text-gold" strokeWidth={1.2} />
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-gold/80">Siga</p>
+            <Instagram className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Siga</p>
             <a
               href="https://www.instagram.com/mauaagastrobar/"
               target="_blank"
@@ -268,7 +266,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-green-deep border-t border-gold/20 py-10">
+      <footer className="bg-sage border-t border-white/10 py-10">
         <div className="flex justify-center">
           <Logo className="h-20" />
         </div>
