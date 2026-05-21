@@ -161,7 +161,7 @@ function Index() {
         <div className="mx-auto max-w-4xl px-6 pb-12">
           <div className="mb-6 text-center">
             <a
-              href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
+              href="https://maps.app.goo.gl/CDMBchHhhD1C8FQv7"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-sage px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] text-white shadow-lg shadow-sage/30 ring-1 ring-white/30 transition-all duration-500 ease-out hover:-translate-y-1 hover:bg-sage/90 hover:shadow-2xl hover:shadow-sage/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98]"
@@ -183,7 +183,7 @@ function Index() {
           <div className="overflow-hidden rounded-sm border border-border/60 shadow-2xl">
             <iframe
               title="Localização do Mauá Gastrobar"
-              src="https://www.google.com/maps?q=Av.+Dom+Emanuel,+143,+Cidade+Jardim,+Goi%C3%A2nia+-+GO&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.383130605051!2d-49.301282!3d-16.6827039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef749293f0533%3A0x7e704153098f4951!2sMau%C3%A1%20Gastrobar!5e0!3m2!1spt-BR!2sbr!4v1716300000000!5m2!1spt-BR!2sbr"
               width="100%"
               height="340"
               style={{ border: 0, display: "block", filter: "grayscale(0.3) contrast(1.05)" }}
