@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MapPin, Phone, Clock, Instagram, Award, ArrowRight } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
 import { DrinksCarousel } from "@/components/DrinksCarousel";
@@ -41,9 +41,34 @@ function Logo({ className = "h-24", subtitle }: { className?: string; subtitle?:
     <div className="flex flex-col items-center leading-tight">
       <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
       {subtitle && (
-        <div className="mt-2 text-[10px] tracking-[0.4em] text-white/80">{subtitle}</div>
+        <div className="mt-2 text-[10px] tracking-[0.4em] text-gold">{subtitle}</div>
       )}
     </div>
+  );
+}
+
+function RevealSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={ref} className={`${className} reveal ${active ? "active" : ""}`}>
+      {children}
+    </section>
   );
 }
 
@@ -108,15 +133,15 @@ function ChampionDishToggle() {
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
-      {/* Header */}
-      <header className="bg-sage border-b border-white/10">
+      {/* Header — Revertido para original (escuro) */}
+      <header className="bg-background border-b border-gold/10">
         <div className="mx-auto max-w-6xl px-6 py-6 flex justify-center">
           <Logo />
         </div>
       </header>
 
       {/* Map */}
-      <section className="border-b border-border/40">
+      <RevealSection className="border-b border-border/40">
         <div className="mx-auto max-w-6xl px-6 pt-12 pb-6 text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-sage/80">Onde nos encontrar</p>
           <h1
@@ -133,11 +158,11 @@ function Index() {
               href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-sage px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-sage/30 ring-1 ring-white/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-sage/90 hover:shadow-xl hover:shadow-sage/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-sage px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] text-white shadow-lg shadow-sage/30 ring-1 ring-white/30 transition-all duration-500 ease-out hover:-translate-y-1 hover:bg-sage/90 hover:shadow-2xl hover:shadow-sage/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98]"
             >
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-full"
               />
               <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
               <span className="relative">Traçar minha rota até o Mauá</span>
@@ -157,10 +182,10 @@ function Index() {
             />
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Sobre */}
-      <section className="relative overflow-hidden">
+      <RevealSection className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${facadeImg})` }}
@@ -194,17 +219,17 @@ function Index() {
             conversa que se estende junto da última taça.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Pratos campeões — Braba + Jilozinho */}
-      <section className="bg-sage border-y border-white/10">
+      <RevealSection className="bg-sage border-y border-white/10">
         <div className="mx-auto max-w-5xl px-6 py-16">
           <ChampionDishToggle />
         </div>
-      </section>
+      </RevealSection>
 
       {/* Carrossel cardápio */}
-      <section className="py-20">
+      <RevealSection className="py-20">
         <div className="mx-auto mb-10 max-w-3xl px-6 text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-sage/80">Do cardápio</p>
           <h3
@@ -218,18 +243,20 @@ function Index() {
           </p>
         </div>
         <MenuCarousel />
-      </section>
+      </RevealSection>
 
       {/* Happy Hour + Rodízio banner */}
-      <HappyHourBanner />
+      <RevealSection>
+        <HappyHourBanner />
+      </RevealSection>
 
       {/* Drinks famosos */}
-      <section className="py-14">
+      <RevealSection className="py-14">
         <DrinksCarousel />
-      </section>
+      </RevealSection>
 
       {/* Info / contatos */}
-      <section className="mx-auto max-w-4xl px-6 py-20">
+      <RevealSection className="mx-auto max-w-4xl px-6 py-20">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="text-center">
             <Clock className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
@@ -263,7 +290,7 @@ function Index() {
             </a>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Footer */}
       <footer className="bg-sage border-t border-white/10 py-10">
