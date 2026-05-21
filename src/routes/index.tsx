@@ -135,11 +135,11 @@ function Index() {
               href="https://maps.app.goo.gl/2nt9ZiCS6vUck7Sx9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-gold-foreground shadow-lg shadow-gold/25 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:shadow-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm bg-green-deep px-8 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-green-foreground shadow-lg shadow-green-deep/30 ring-1 ring-gold/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green hover:shadow-xl hover:shadow-green-deep/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.98] active:shadow-md"
             >
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
               />
               <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
               <span className="relative">Traçar minha rota até o Mauá</span>
@@ -270,7 +270,7 @@ function Index() {
       {/* Footer */}
       <footer className="bg-green-deep border-t border-gold/20 py-10">
         <div className="flex justify-center">
-          <Logo className="h-20" subtitle="GASTROBAR · GOIÂNIA" />
+          <Logo className="h-20" />
         </div>
       </footer>
     </main>
