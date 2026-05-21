@@ -270,7 +270,7 @@ function Index() {
       {/* Footer */}
       <footer className="bg-green-deep border-t border-gold/20 py-10">
         <div className="flex justify-center">
-          <Logo className="h-20" subtitle="GASTROBAR · GOIÂNIA" />
+          <Logo className="h-20" />
         </div>
       </footer>
     </main>
