@@ -56,7 +56,8 @@ export function MenuCarousel() {
         className="group relative overflow-hidden"
         style={{
           maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         }}
       >
         <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
@@ -80,7 +81,9 @@ export function MenuCarousel() {
                   >
                     {item.name}
                   </p>
-                  <span className="text-xs uppercase tracking-[0.2em] text-gold/80">{item.price}</span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-gold/80">
+                    {item.price}
+                  </span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
               </figcaption>

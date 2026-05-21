@@ -22,8 +22,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Mauá Gastrobar" },
       {
         property: "og:description",
-        content:
-          "Cozinha autoral e croquetas premiadas no coração da Cidade Jardim, Goiânia.",
+        content: "Cozinha autoral e croquetas premiadas no coração da Cidade Jardim, Goiânia.",
       },
     ],
     links: [
@@ -40,14 +39,18 @@ function Logo({ className = "h-24", subtitle }: { className?: string; subtitle?:
   return (
     <div className="flex flex-col items-center leading-tight">
       <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
-      {subtitle && (
-        <div className="mt-2 text-[10px] tracking-[0.4em] text-gold">{subtitle}</div>
-      )}
+      {subtitle && <div className="mt-2 text-[10px] tracking-[0.4em] text-gold">{subtitle}</div>}
     </div>
   );
 }
 
-function RevealSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function RevealSection({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLElement>(null);
   const [active, setActive] = useState(false);
 
@@ -59,7 +62,7 @@ function RevealSection({ children, className = "" }: { children: React.ReactNode
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -132,7 +135,10 @@ function ChampionDishToggle() {
 
 function Index() {
   return (
-    <main className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
+    <main
+      className="min-h-screen bg-background text-foreground"
+      style={{ fontFamily: "var(--font-sans)" }}
+    >
       {/* Header — Revertido para original (escuro) */}
       <header className="bg-background border-b border-gold/10">
         <div className="mx-auto max-w-6xl px-6 py-6 flex justify-center">
@@ -166,7 +172,12 @@ function Index() {
               />
               <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
               <span className="relative">Traçar minha rota até o Mauá</span>
-              <span aria-hidden className="relative text-base leading-none transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span
+                aria-hidden
+                className="relative text-base leading-none transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
             </a>
           </div>
           <div className="overflow-hidden rounded-sm border border-border/60 shadow-2xl">
@@ -210,13 +221,13 @@ function Index() {
           <div className="mx-auto mt-8 h-px w-16 bg-gold/50" />
           <p className="mt-8 text-base leading-relaxed text-foreground/90 md:text-lg">
             No coração da Cidade Jardim, o <span className="text-gold">Mauá Gastrobar</span> nasceu
-            do desejo de transformar a noite goianiense em experiência. Cozinha autoral, drinks pensados
-            como assinatura e uma atmosfera que convida a ficar — a casa reúne quem busca sabor, encontro
-            e a sensação rara de estar exatamente no lugar certo.
+            do desejo de transformar a noite goianiense em experiência. Cozinha autoral, drinks
+            pensados como assinatura e uma atmosfera que convida a ficar — a casa reúne quem busca
+            sabor, encontro e a sensação rara de estar exatamente no lugar certo.
           </p>
           <p className="mt-6 text-base leading-relaxed text-foreground/90 md:text-lg">
-            Cada prato carrega intenção. Cada detalhe, cuidado. Aqui, jantar é pausa, é celebração, é
-            conversa que se estende junto da última taça.
+            Cada prato carrega intenção. Cada detalhe, cuidado. Aqui, jantar é pausa, é celebração,
+            é conversa que se estende junto da última taça.
           </p>
         </div>
       </RevealSection>
@@ -239,7 +250,8 @@ function Index() {
             Pratos e drinks que contam a casa.
           </h3>
           <p className="mt-3 text-sm italic text-muted-foreground">
-            Uma amostra dos pratos campeões e dos queridinhos do salão — o cardápio completo tem muito mais.
+            Uma amostra dos pratos campeões e dos queridinhos do salão — o cardápio completo tem
+            muito mais.
           </p>
         </div>
         <MenuCarousel />
@@ -259,36 +271,37 @@ function Index() {
       <RevealSection className="border-t border-white/5 bg-white/[0.02] py-20">
         <div className="mx-auto max-w-4xl px-6">
           <div className="grid gap-10 md:grid-cols-3">
-          <div className="text-center">
-            <Clock className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Horário</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Terça a Quinta: 18h–23h
-              <br />
-              Sex, Sáb e Dom: 12h–23h
-            </p>
-          </div>
-          <div className="text-center">
-            <Phone className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Reservas</p>
-            <a
-              href="tel:+556231000024"
-              className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              (62) 3100-0024
-            </a>
-          </div>
-          <div className="text-center">
-            <Instagram className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Siga</p>
-            <a
-              href="https://www.instagram.com/mauaagastrobar/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              @mauaagastrobar
-            </a>
+            <div className="text-center">
+              <Clock className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+              <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Horário</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Terça a Quinta: 18h–23h
+                <br />
+                Sex, Sáb e Dom: 12h–23h
+              </p>
+            </div>
+            <div className="text-center">
+              <Phone className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+              <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Reservas</p>
+              <a
+                href="tel:+556231000024"
+                className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                (62) 3100-0024
+              </a>
+            </div>
+            <div className="text-center">
+              <Instagram className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+              <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Siga</p>
+              <a
+                href="https://www.instagram.com/mauaagastrobar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                @mauaagastrobar
+              </a>
+            </div>
           </div>
         </div>
       </RevealSection>
