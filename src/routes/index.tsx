@@ -92,21 +92,15 @@ function ChampionDishToggle() {
         <div className="mt-8 flex items-center justify-center gap-4 md:justify-start">
           <button
             type="button"
-            onClick={prev}
-            aria-label="Prato anterior"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-gold transition-all hover:-translate-x-0.5 hover:bg-gold hover:text-gold-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-          >
-            <ArrowLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
             onClick={next}
-            className="group inline-flex items-center gap-2 rounded-full bg-gold/10 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold transition-all hover:bg-gold hover:text-gold-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-            aria-label="Ver outro prato campeão"
+            aria-label={`Ver ${dishes[(i + 1) % dishes.length].title}`}
+            className="group flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-gold transition-all hover:translate-x-0.5 hover:bg-gold hover:text-gold-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
-            <span>Ver o prato de {i === 0 ? "2025" : "2026"}</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-5 w-5" />
           </button>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">
+            Ver {dishes[(i + 1) % dishes.length].title}
+          </span>
         </div>
       </div>
     </div>
