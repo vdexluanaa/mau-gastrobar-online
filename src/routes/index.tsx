@@ -232,7 +232,7 @@ function Index() {
       <HappyHourBanner />
 
       {/* Drinks famosos */}
-      <section className="py-20">
+      <section className="py-14">
         <DrinksCarousel />
       </section>
 
