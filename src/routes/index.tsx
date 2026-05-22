@@ -4,6 +4,7 @@ import { MapPin, Phone, Clock, Instagram, Award, ArrowRight, MessageCircle } fro
 import { MenuCarousel } from "@/components/MenuCarousel";
 import { DrinksCarousel } from "@/components/DrinksCarousel";
 import { HappyHourBanner } from "@/components/HappyHourBanner";
+import { RouteCTA } from "@/components/RouteCTA";
 import croquetaImg from "@/assets/dish-braba-brocolis.jpg";
 import jilozinhoImg from "@/assets/dish-jilozinho-maua.jpg";
 import facadeImg from "@/assets/maua-facade-night.jpg";
@@ -260,6 +261,11 @@ function Index() {
       {/* Happy Hour + Rodízio banner */}
       <RevealSection>
         <HappyHourBanner />
+      </RevealSection>
+
+      {/* Reforço de Rota */}
+      <RevealSection>
+        <RouteCTA />
       </RevealSection>
 
       {/* Drinks famosos */}
