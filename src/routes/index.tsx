@@ -247,7 +247,7 @@ function Index() {
             className="text-3xl text-foreground md:text-4xl"
             style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
           >
-            Pratos e drinks que contam a casa.
+            Pratos que contam a casa.
           </h3>
           <p className="mt-3 text-sm italic text-muted-foreground">
             Uma amostra dos pratos campeões e dos queridinhos do salão — o cardápio completo tem
