@@ -24,7 +24,7 @@ export function HappyHourBanner() {
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
               <span>Drinks à vontade por</span>
-              <span className="text-gold mt-2">R$ 60,00</span>
+              <span className="text-gold mt-2" style={{ fontVariantNumeric: "lining-nums tabular-nums" }}>R$ 60,00</span>
             </h4>
             <div className="mt-6 h-px w-12 bg-gold/50" />
             <p className="mt-6 text-base leading-relaxed text-foreground/90">
@@ -43,7 +43,7 @@ export function HappyHourBanner() {
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
               <span>Caneca de chopp Biomma por</span>
-              <span className="text-gold mt-2">R$ 6,99</span>
+              <span className="text-gold mt-2" style={{ fontVariantNumeric: "lining-nums tabular-nums" }}>R$ 6,99</span>
             </h4>
             <div className="mt-6 h-px w-12 bg-gold/50" />
             <p className="mt-6 text-base leading-relaxed text-foreground/90">

@@ -81,7 +81,7 @@ export function MenuCarousel() {
                   >
                     {item.name}
                   </p>
-                  <span className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.2em] text-gold/80">
+                  <span className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.2em] text-gold/80" style={{ fontVariantNumeric: "lining-nums tabular-nums" }}>
                     {item.price}
                   </span>
                 </div>
