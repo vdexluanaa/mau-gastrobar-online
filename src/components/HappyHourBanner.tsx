@@ -48,10 +48,8 @@ export function HappyHourBanner() {
             <div className="mt-6 h-px w-12 bg-gold/50" />
             <p className="mt-6 text-base leading-relaxed text-foreground/90">
               <span className="text-gold">Terça a quinta, das 18h às 23h.</span> Escolha entre IPA,
-              Vinho ou Pilsen. O melhor happy hour de Goiânia acontece aqui.
-            </p>
-            <p className="mt-3 text-xs uppercase tracking-[0.2em] text-foreground/70">
-              Sex e sáb: 12h–21h · Domingo: 12h–18h
+              Vinho ou Pilsen. O melhor happy hour de Goiânia acontece aqui com chopp gelado e
+              ambiente único.
             </p>
           </article>
         </div>
