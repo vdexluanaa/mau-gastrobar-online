@@ -314,6 +314,16 @@ function Index() {
           <Logo className="h-20" />
         </div>
       </footer>
+      {/* Botão Flutuante WhatsApp */}
+      <a
+        href="https://wa.me/556231000024"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-sage text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-sage/90 active:scale-95"
+        aria-label="Falar no WhatsApp"
+      >
+        <MessageCircle className="h-7 w-7 fill-white" />
+      </a>
     </main>
   );
 }
