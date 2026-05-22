@@ -287,10 +287,9 @@ function Index() {
                 href="https://wa.me/556231000024"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-2 rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-600 transition-all hover:bg-green-500 hover:text-white"
+                className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-sage"
               >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp
+                (62) 3100-0024
               </a>
             </div>
             <div className="text-center">
