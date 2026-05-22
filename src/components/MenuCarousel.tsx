@@ -74,18 +74,18 @@ export function MenuCarousel() {
                 />
               </div>
               <figcaption className="mt-4 px-1">
-                <div className="flex items-baseline justify-between gap-3">
+                <div className="flex flex-col items-center text-center gap-1">
                   <p
                     className="text-lg text-foreground"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
                   >
                     {item.name}
                   </p>
-                  <span className="text-xs uppercase tracking-[0.2em] text-gold/80">
+                  <span className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.2em] text-gold/80">
                     {item.price}
                   </span>
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+                <p className="mt-2 text-center text-xs text-muted-foreground">{item.desc}</p>
               </figcaption>
             </figure>
           ))}

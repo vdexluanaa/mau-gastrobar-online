@@ -41,7 +41,7 @@ export function HappyHourBanner() {
               className="mt-3 text-3xl text-foreground md:text-4xl"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
-              Caneca de chopp Biomma por <span className="text-gold">R$ 4,99</span>
+              Caneca de chopp Biomma por <span className="text-gold">R$ 6,99</span>
             </h4>
             <div className="mt-6 h-px w-12 bg-gold/50" />
             <p className="mt-6 text-base leading-relaxed text-foreground/90">

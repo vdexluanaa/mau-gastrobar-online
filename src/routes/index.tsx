@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
-import { MapPin, Phone, Clock, Instagram, Award, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Award, ArrowRight, MessageCircle } from "lucide-react";
 import { MenuCarousel } from "@/components/MenuCarousel";
 import { DrinksCarousel } from "@/components/DrinksCarousel";
 import { HappyHourBanner } from "@/components/HappyHourBanner";
@@ -281,13 +281,16 @@ function Index() {
               </p>
             </div>
             <div className="text-center">
-              <Phone className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
+              <MessageCircle className="mx-auto h-5 w-5 text-sage" strokeWidth={1.2} />
               <p className="mt-3 text-xs uppercase tracking-[0.25em] text-sage/80">Reservas</p>
               <a
-                href="tel:+556231000024"
-                className="mt-3 block text-sm text-muted-foreground transition-colors hover:text-foreground"
+                href="https://wa.me/556231000024"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-2 rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-600 transition-all hover:bg-green-500 hover:text-white"
               >
-                (62) 3100-0024
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp
               </a>
             </div>
             <div className="text-center">
