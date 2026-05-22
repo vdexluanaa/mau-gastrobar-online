@@ -16,14 +16,15 @@ export function HappyHourBanner() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Rodízio de drinks */}
-          <article className="group relative overflow-hidden rounded-sm border border-gold/30 bg-background/20 p-8 transition-all hover:border-gold/60 hover:bg-background/30">
+          <article className="group relative overflow-hidden rounded-sm border border-gold/30 bg-background/20 p-8 transition-all hover:border-gold/60 hover:bg-background/30 flex flex-col items-center text-center">
             <Sparkles className="h-7 w-7 text-gold" strokeWidth={1.2} />
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">Rodízio de drinks</p>
             <h4
-              className="mt-3 text-3xl text-foreground md:text-4xl"
+              className="mt-3 text-3xl text-foreground md:text-4xl flex flex-col items-center"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
-              Drinks à vontade por <span className="text-gold">R$ 60</span>
+              <span>Drinks à vontade por</span>
+              <span className="text-gold mt-2">R$ 60</span>
             </h4>
             <div className="mt-6 h-px w-12 bg-gold/50" />
             <p className="mt-6 text-base leading-relaxed text-foreground/90">
@@ -34,14 +35,15 @@ export function HappyHourBanner() {
           </article>
 
           {/* Happy Hour Chopp */}
-          <article className="group relative overflow-hidden rounded-sm border border-gold/30 bg-background/20 p-8 transition-all hover:border-gold/60 hover:bg-background/30">
+          <article className="group relative overflow-hidden rounded-sm border border-gold/30 bg-background/20 p-8 transition-all hover:border-gold/60 hover:bg-background/30 flex flex-col items-center text-center">
             <Beer className="h-7 w-7 text-gold" strokeWidth={1.2} />
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">Happy Hour</p>
             <h4
-              className="mt-3 text-3xl text-foreground md:text-4xl"
+              className="mt-3 text-3xl text-foreground md:text-4xl flex flex-col items-center"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
-              Caneca de chopp Biomma por <span className="whitespace-nowrap text-gold">R$ 6,99</span>
+              <span>Caneca de chopp Biomma por</span>
+              <span className="text-gold mt-2">R$ 6,99</span>
             </h4>
             <div className="mt-6 h-px w-12 bg-gold/50" />
             <p className="mt-6 text-base leading-relaxed text-foreground/90">
