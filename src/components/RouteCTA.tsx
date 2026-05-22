@@ -1,21 +1,21 @@
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export function RouteCTA() {
   return (
-    <div className="bg-background py-8">
-      <div className="mx-auto max-w-4xl px-6">
+    <div className="w-full bg-background border-y border-gold/10">
+      <div className="mx-auto max-w-6xl px-6">
         <a
           href="https://maps.app.goo.gl/CDMBchHhhD1C8FQv7"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center justify-between gap-6 rounded-sm border border-gold/20 bg-white/[0.02] p-6 transition-all hover:border-gold/40 hover:bg-white/[0.04] md:flex-row md:p-8"
+          className="group flex flex-col items-center justify-between gap-6 py-10 transition-all md:flex-row"
         >
-          <div className="flex items-center gap-4 text-center md:text-left">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 text-gold transition-transform duration-500 group-hover:scale-110">
+          <div className="flex items-center gap-5 text-center md:text-left">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/5 text-gold transition-transform duration-500 group-hover:scale-110">
               <MapPin className="h-6 w-6" strokeWidth={1.5} />
             </div>
             <div>
-              <h4 className="text-lg font-medium text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+              <h4 className="text-xl font-medium text-foreground md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
                 Pronto para viver essa experiência?
               </h4>
               <p className="text-sm text-muted-foreground">
@@ -24,9 +24,11 @@ export function RouteCTA() {
             </div>
           </div>
           
-          <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-gold transition-all group-hover:gap-5">
-            <span>Traçar meu caminho até o Mauá</span>
-            <ArrowRight className="h-4 w-4" />
+          <div className="flex shrink-0 items-center gap-4 text-xs font-bold uppercase tracking-[0.25em] text-gold transition-all group-hover:gap-6">
+            <span className="whitespace-nowrap">Traçar meu caminho até o Mauá</span>
+            <span className="text-lg leading-none tracking-tighter transition-transform duration-300 group-hover:translate-x-2">
+              &gt;&gt;&gt;
+            </span>
           </div>
         </a>
       </div>
