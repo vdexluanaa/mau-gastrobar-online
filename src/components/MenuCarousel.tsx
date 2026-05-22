@@ -92,17 +92,7 @@ export function MenuCarousel() {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <a
-          href={MENU_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-7 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-gold-foreground hover:shadow-lg hover:shadow-gold/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]"
-        >
-          <span>Ver cardápio completo</span>
-          <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-        </a>
-      </div>
+
     </div>
   );
 }

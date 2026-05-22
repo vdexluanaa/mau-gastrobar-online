@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 
 export function RouteCTA() {
   return (
-    <div className="w-full bg-background border-y border-gold/10">
+    <div className="w-full bg-white/[0.03] backdrop-blur-sm border-y border-gold/10">
       <div className="mx-auto max-w-6xl px-6">
         <a
           href="https://maps.app.goo.gl/CDMBchHhhD1C8FQv7"
