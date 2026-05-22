@@ -8,9 +8,9 @@ export function RouteCTA() {
           href="https://maps.app.goo.gl/CDMBchHhhD1C8FQv7"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center justify-between gap-6 py-10 transition-all md:flex-row"
+          className="group flex flex-col items-center justify-center gap-6 py-10 text-center transition-all"
         >
-          <div className="flex items-center gap-5 text-center md:text-left">
+          <div className="flex flex-col items-center gap-4">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/5 text-gold transition-transform duration-500 group-hover:scale-110">
               <MapPin className="h-6 w-6" strokeWidth={1.5} />
             </div>
@@ -18,12 +18,12 @@ export function RouteCTA() {
               <h4 className="text-xl font-medium text-foreground md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
                 Pronto para viver essa experiência?
               </h4>
-              <p className="text-sm text-muted-foreground">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Estamos no coração da Cidade Jardim, esperando por você.
               </p>
             </div>
           </div>
-          
+
           <div className="flex shrink-0 items-center gap-4 text-xs font-bold uppercase tracking-[0.25em] text-gold transition-all group-hover:gap-6">
             <span className="whitespace-nowrap">Traçar meu caminho até o Mauá</span>
             <span className="text-lg leading-none tracking-tighter transition-transform duration-300 group-hover:translate-x-2">
