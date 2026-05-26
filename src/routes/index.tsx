@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-function Logo({ className = "h-24", subtitle }: { className?: string; subtitle?: string }) {
+function Logo({ className = "h-28", subtitle }: { className?: string; subtitle?: string }) {
   return (
     <div className="flex flex-col items-center leading-tight">
       <img src={logoImg} alt="Mauá Gastrobar" className={`${className} w-auto object-contain`} />
