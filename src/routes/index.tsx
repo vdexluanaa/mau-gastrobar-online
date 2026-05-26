@@ -317,7 +317,7 @@ function Index() {
       {/* Footer */}
       <footer className="bg-sage border-t border-white/10 py-10">
         <div className="flex justify-center">
-          <Logo className="h-20" />
+          <Logo className="h-24" />
         </div>
       </footer>
       {/* Botão Flutuante WhatsApp */}
